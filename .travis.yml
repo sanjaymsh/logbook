@@ -14,14 +14,21 @@ matrix:
   exclude:
      - python: '2.7'
        arch: ppc64le
-arch:
-  - amd64
-  - ppc64le
-python:
-- '2.7'
-- '3.5'
-- '3.6'
-- '3.7'
+  include:
+     - python: '2.7'
+       arch: amd64
+     - python: '3.5'
+       arch: amd64
+     - python: '3.6'
+       arch: amd64
+     - python: '3.7'
+       arch: amd64
+     - python: '3.5'
+       arch: ppc64le
+     - python: '3.6'
+       arch: ppc64le
+     - python: '3.7'
+       arch: ppc64le
 before_install:
   - pip install coveralls
 install:
