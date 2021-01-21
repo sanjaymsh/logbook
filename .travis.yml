@@ -19,6 +19,7 @@ python:
 - '3.6'
 - '3.7'
 before_install:
+  - pip install --upgrade pip
   - pip install coveralls
 install:
 - pip install -U pip
@@ -43,9 +44,6 @@ matrix:
     env: GEVENT=True CYBUILD=True
     arch: amd64
   - python: "3.6"
-    env: GEVENT=True CYBUILD=True
-    arch: ppc64le
-  - python: "2.7"
     env: GEVENT=True CYBUILD=True
     arch: ppc64le
 
