@@ -10,6 +10,9 @@ addons:
     - libzmq3-dev
 services:
 - redis-server
+arch:
+  - amd64
+  - ppc64le
 python:
 - '2.7'
 - '3.5'
@@ -35,8 +38,16 @@ matrix:
   include:
   - python: "3.6"
     env: GEVENT=True CYBUILD=True
+    arch: amd64
   - python: "2.7"
     env: GEVENT=True CYBUILD=True
+    arch: amd64
+  - python: "3.6"
+    env: GEVENT=True CYBUILD=True
+    arch: ppc64le
+  - python: "2.7"
+    env: GEVENT=True CYBUILD=True
+    arch: ppc64le
 
 after_success:
   - coveralls
