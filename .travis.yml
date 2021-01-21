@@ -10,6 +10,10 @@ addons:
     - libzmq3-dev
 services:
 - redis-server
+matrix:
+  exclude:
+     - python: '2.7'
+       arch: ppc64le
 arch:
   - amd64
   - ppc64le
@@ -18,10 +22,6 @@ python:
 - '3.5'
 - '3.6'
 - '3.7'
-matrix:
-  exclude:
-     - python: '2.7'
-       arch: ppc64le
 before_install:
   - pip install coveralls
 install:
