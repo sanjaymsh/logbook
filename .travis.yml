@@ -13,12 +13,10 @@ services:
 arch:
   - amd64
   - ppc64le
-matrix:
-  include:
-     - python: '2.7'
-     - python: '3.5'
-     - python: '3.6'
-     - python: '3.7'
+python:
+   - '3.5'
+   - '3.6'
+   - '3.7'
 before_install:
   - pip install coveralls
 install:
